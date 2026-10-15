@@ -17,18 +17,22 @@ body.bloqueado{overflow:hidden}
 @keyframes brillo{to{background-position:-200% 0}}
 canvas#polvo{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 main{position:relative;z-index:2}
-section{padding:4.5rem 1.5rem;max-width:760px;margin:0 auto}
+section{padding:3.5rem 1.5rem;max-width:760px;margin:1.5rem auto}
+.marco{position:relative;background:rgba(255,255,255,.86);border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px}
+section.marco{width:calc(100% - 3rem)}
+.sub{border:1px solid var(--oro-cl);padding:1.4rem 1rem;background:#fff}
 h2{font:400 2.6rem/1.2 var(--script);margin-bottom:1.4rem;padding:0 .2em}
 h3{font:600 1.15rem/1.3 var(--serif);color:var(--oro-os);margin-bottom:.5rem;letter-spacing:.04em}
 p+p{margin-top:.4rem}
 .linea{height:1px;width:min(220px,60%);margin:0 auto 2rem;background:linear-gradient(90deg,transparent,var(--oro),transparent)}
 
 /* Portada */
-#portada{position:fixed;inset:0;z-index:50;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;padding:2rem;transition:opacity 1s ease .5s,transform 1.4s ease}
-#portada::before{content:"";position:absolute;inset:14px;border:1px solid var(--oro-cl);outline:1px solid var(--oro-cl);outline-offset:6px;pointer-events:none}
-#portada .mono{font:400 clamp(5rem,26vw,9rem)/1 var(--script);padding:0 .2em}
-#portada p{font-style:italic;font-size:1.3rem}
-#portada button{margin-top:.8rem}
+#portada{position:fixed;inset:0;z-index:50;background:#fff;display:flex;align-items:center;justify-content:center;padding:1rem;transition:opacity 1s ease .5s,transform 1.4s ease}
+.sobre{width:min(92vw,540px);aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:22% 6% 4%;border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px;background:linear-gradient(to bottom right,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) left top/50% 58% no-repeat,linear-gradient(to bottom left,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) right top/50% 58% no-repeat,#fff}
+.sobre.img{background:url('sobre.png') center/100% 100% no-repeat;border:0;outline:0}
+.sobre .mono{font:400 clamp(3.2rem,15vw,5.2rem)/1 var(--script);padding:0 .2em}
+.sobre p{font-style:italic;font-size:clamp(1rem,3.6vw,1.3rem);line-height:1.3}
+.sobre .btn{margin-top:.5rem;padding:.5rem 1.5rem}
 #portada.abierta{opacity:0;transform:scale(1.25);pointer-events:none}
 .destello{position:fixed;left:50%;top:50%;width:20px;height:20px;margin:-10px;border-radius:50%;z-index:60;pointer-events:none;border:2px solid var(--oro);opacity:0}
 .destello.ir{animation:onda 1.4s ease-out}
@@ -40,21 +44,23 @@ p+p{margin-top:.4rem}
 :focus-visible{outline:2px solid var(--oro);outline-offset:3px}
 
 /* Inicio */
-#inicio{min-height:100svh;display:flex;flex-direction:column;justify-content:center;align-items:center;max-width:none}
-#inicio .intro{font-style:italic;font-size:1.4rem}
-#inicio .nombre{font:400 clamp(3.4rem,14vw,7rem)/1.15 var(--script);padding:0 .25em}
+#inicio{min-height:calc(100svh - 3rem);display:flex;flex-direction:column;justify-content:center;align-items:center}
+#inicio .intro{font-style:italic;font-size:1.4rem;max-width:26ch;margin:0 auto .6rem;line-height:1.4}
+#inicio .nombre{font:400 clamp(3rem,12vw,6.5rem)/1.15 var(--script);padding:0 .25em}
 #inicio .y{font:400 2.2rem var(--script);color:var(--oro);line-height:1}
 #inicio .fecha{margin-top:1.6rem;font-size:1.5rem;letter-spacing:.08em}
-.cuenta{display:flex;gap:1.2rem;justify-content:center;margin-top:2.2rem}
-.cuenta div{min-width:64px}
+.cuenta{display:flex;gap:.8rem;justify-content:center;margin-top:2.2rem;border:1px solid var(--oro-cl);padding:1rem 1.2rem;background:#fff}
+.cuenta div{min-width:52px}
 .cuenta b{display:block;font:400 2.4rem/1 var(--serif);color:var(--oro-os)}
 .cuenta span{font-size:1rem;font-style:italic}
 
+.ref{margin-top:1rem;font-size:1.1rem;color:var(--oro-os);letter-spacing:.04em}
 .frase{font-style:italic;font-size:1.6rem;line-height:1.5;max-width:30ch;margin:0 auto}
 .dos{display:grid;grid-template-columns:1fr 1fr;gap:2rem 1.5rem}
-.padrinos{margin-top:2.4rem}
+.padrinos{margin-top:1.5rem}
 .lugares{display:grid;gap:3rem}
 .lugar .btn{margin-top:1rem}
+.hora{font-weight:600;font-size:1.4rem;color:var(--oro-os)}
 
 .fotos{columns:2 180px;column-gap:14px;margin-top:1rem}
 .fotos img{width:100%;display:block;margin:0 0 14px;padding:6px;background:#fff;border:1px solid var(--oro-cl);box-shadow:0 8px 20px rgba(184,137,45,.22);break-inside:avoid;animation:aparece .9s ease both}
@@ -74,16 +80,18 @@ footer .firma{font:400 3rem var(--script);padding:0 .2em}
 #mbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 #mbtn .tacha{display:none}
 #mbtn.off .tacha{display:block}
-@media (max-width:520px){h2{font-size:2.2rem}.dos{grid-template-columns:1fr}}
+@media (max-width:520px){h2{font-size:2.2rem}.dos{grid-template-columns:1fr}.cuenta{gap:.5rem;padding:.8rem}.cuenta span{font-size:.9rem}.cuenta b{font-size:2rem}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body class="bloqueado">
 
 <div id="portada">
-  <div class="mono oro">K &amp; M</div>
-  <p>Estás invitado a nuestra boda</p>
-  <button class="btn" id="abrir">Abrir invitación</button>
+  <div class="sobre" id="sobre">
+    <div class="mono oro">K &amp; M</div>
+    <p>Estás invitado a nuestra boda</p>
+    <button class="btn" id="abrir">Abrir invitación</button>
+  </div>
 </div>
 <div class="destello" id="destello"></div>
 
@@ -94,77 +102,74 @@ footer .firma{font:400 3rem var(--script);padding:0 .2em}
 <audio id="musica" src="musica.mp3" loop preload="auto"></audio>
 
 <main>
-  <section id="inicio">
-    <p class="intro">Nos casamos</p>
+  <section id="inicio" class="marco">
+    <p class="intro">Al unir nuestras vidas, nos honraría contar con tu presencia en este día tan especial</p>
     <h1 class="nombre oro">Kennia Monserrat</h1>
     <span class="y">y</span>
     <h1 class="nombre oro">Marco Antonio</h1>
     <p class="fecha">30 de diciembre de 2026</p>
-    <!-- HORA: agrega aquí la hora de la ceremonia, por ejemplo: <p>Ceremonia a las 5:00 de la tarde</p> -->
     <div class="cuenta" id="cuenta" aria-label="Cuenta regresiva"></div>
   </section>
 
-  <section>
-    <!-- FRASE: cambia el texto por la opción que más te guste -->
-    <p class="frase">Dos caminos que se encontraron hoy se vuelven uno solo. Queremos que estés ahí para verlo.</p>
+  <section class="marco">
+    <p class="frase">Todo lo sufre, todo lo cree, todo lo espera, todo lo soporta. El amor nunca deja de ser.</p>
+    <p class="ref">1 Corintios 13:7-8</p>
   </section>
 
-  <section>
+  <section class="marco">
     <h2 class="oro">Con la bendición de nuestros padres</h2>
     <div class="linea"></div>
     <div class="dos">
-      <div>
+      <div class="sub">
         <h3>Padres de la novia</h3>
         <p>José Antonio Alonso Juárez</p>
         <p>Janet Serrano Nava</p>
       </div>
-      <div>
+      <div class="sub">
         <h3>Padres del novio</h3>
-        <p>Irma Ramírez Ramos</p>
         <p>Martín Espinoza Espinoza</p>
+        <p>Irma Ramírez Ramos</p>
       </div>
     </div>
-    <div class="padrinos">
+    <div class="padrinos sub">
       <h3>Nuestros padrinos</h3>
       <p>Bernardo Algo Algo</p>
       <p>Gilberta Algo Algo</p>
     </div>
   </section>
 
-  <section>
+  <section class="marco">
     <h2 class="oro">Cómo llegar</h2>
     <div class="linea"></div>
     <div class="lugares">
-      <div class="lugar">
+      <div class="lugar sub">
         <h3>Ceremonia religiosa</h3>
         <p>Nueva parroquia de San Matías Apóstol</p>
+        <p class="hora">12:00 horas</p>
         <a class="btn" href="https://maps.app.goo.gl/RFimkk1kdjGvWKwY9" target="_blank" rel="noopener">Ver en el mapa</a>
       </div>
-      <div class="lugar">
-        <h3>Celebración</h3>
-        <p>Casa del novio, San Mateo Ayecac</p>
+      <div class="lugar sub">
+        <h3>Recepción</h3>
+        <p>San Mateo Ayecac</p>
+        <p class="hora">14:00 horas</p>
         <a class="btn" href="https://maps.app.goo.gl/BG5PshgDuUW4Q1vEA" target="_blank" rel="noopener">Ver en el mapa</a>
       </div>
     </div>
   </section>
 
-  <section id="seccion-fotos" hidden>
+  <section id="seccion-fotos" class="marco" hidden>
     <h2 class="oro">Nuestra historia</h2>
     <div class="linea"></div>
     <div class="fotos" id="fotos"></div>
   </section>
 
-  <section>
-    <h2 class="oro">Confirma tu asistencia</h2>
+  <section class="marco">
+    <h2 class="oro">Déjanos un mensaje</h2>
     <div class="linea"></div>
-    <form id="rsvp">
+    <form id="mensajes">
       <div><label for="nombre">Tu nombre</label><input id="nombre" name="nombre" required autocomplete="name"></div>
-      <div><label for="asistencia">¿Vas a asistir?</label>
-        <select id="asistencia" name="asistencia"><option value="si">Sí, ahí estaré</option><option value="no">No podré asistir</option></select></div>
-      <div id="bloque-personas"><label for="personas">Personas que asisten</label>
-        <select id="personas" name="personas"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-      <div><label for="mensaje">Un mensaje para los novios (opcional)</label><textarea id="mensaje" name="mensaje" rows="3"></textarea></div>
-      <button class="btn" type="submit">Enviar confirmación</button>
+      <div><label for="mensaje">Tu mensaje para los novios</label><textarea id="mensaje" name="mensaje" rows="4" required></textarea></div>
+      <button class="btn" type="submit">Enviar mensaje</button>
     </form>
     <p id="gracias"></p>
   </section>
@@ -176,11 +181,12 @@ footer .firma{font:400 3rem var(--script);padding:0 .2em}
 </footer>
 
 <script>
-/* Cuando tengas tu servidor en Python, escribe aquí su dirección. Ejemplo: "/confirmar" */
+/* Cuando tengas tu servidor en Python, escribe aquí su dirección para guardar los mensajes. Ejemplo: "/mensaje" */
 const API_URL = "";
 
+//const $ = id => document.getElementById(id);
 const $ = id => document.getElementById(id);
-const musica = $('musica'), mbtn = $('mbtn');
+const fondo = new Image(); fondo.onload = () => $('sobre').classList.add('img'); fondo.src = 'sobre.png';
 
 /* Portada y música */
 $('abrir').addEventListener('click', () => {
@@ -188,11 +194,12 @@ $('abrir').addEventListener('click', () => {
   $('portada').classList.add('abierta');
   document.body.classList.remove('bloqueado');
   musica.volume = 0.6;
+  if (!fallo) mbtn.classList.add('ver');
   musica.play().catch(() => {});
   setTimeout(() => $('portada').remove(), 1900);
 });
-musica.addEventListener('loadeddata', () => mbtn.classList.add('ver'));
-musica.addEventListener('error', () => mbtn.classList.remove('ver'));
+let fallo = false;
+musica.addEventListener('error', () => { fallo = true; mbtn.classList.remove('ver'); });
 const estado = () => mbtn.classList.toggle('off', musica.paused);
 musica.addEventListener('play', estado); musica.addEventListener('pause', estado);
 mbtn.addEventListener('click', () => musica.paused ? musica.play() : musica.pause());
@@ -255,24 +262,20 @@ estado();
   cargar(1);
 })();
 
-/* Confirmación */
-$('asistencia').addEventListener('change', e => { $('bloque-personas').style.display = e.target.value === 'si' ? '' : 'none'; });
-$('rsvp').addEventListener('submit', async e => {
+/* Mensaje para los novios */
+$('mensajes').addEventListener('submit', async e => {
   e.preventDefault();
   const datos = Object.fromEntries(new FormData(e.target));
-  if (datos.asistencia === 'no') datos.personas = 0;
   let ok = true;
   if (API_URL) {
-    try {
-      const r = await fetch(API_URL, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(datos) });
-      ok = r.ok;
-    } catch (_) { ok = false; }
+    try { ok = (await fetch(API_URL, { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(datos) })).ok; }
+    catch (_) { ok = false; }
   }
   const g = $('gracias');
-  if (!ok) { g.textContent = 'No pudimos guardar tu confirmación. Inténtalo de nuevo en unos minutos.'; g.style.display = 'block'; return; }
-  e.target.style.display = 'none';
-  g.textContent = datos.asistencia === 'si' ? '¡Gracias, ' + datos.nombre + '! Te esperamos.' : 'Gracias por avisarnos, ' + datos.nombre + '. Te mandamos un abrazo.';
   g.style.display = 'block';
+  if (!ok) { g.textContent = 'No pudimos enviar tu mensaje. Inténtalo de nuevo en unos minutos.'; return; }
+  e.target.style.display = 'none';
+  g.textContent = '¡Gracias, ' + datos.nombre + '!';
 });
 </script>
 </body>
