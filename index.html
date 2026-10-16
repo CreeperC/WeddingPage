@@ -3,32 +3,33 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ebe2cd">
 <title>Kennia y Marco Antonio | Nuestra boda</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
-:root{--oro:#b8892d;--oro-os:#8a6418;--oro-cl:#e9cf8b;--texto:#5a4a2e;--script:'Pinyon Script','Snell Roundhand','Brush Script MT',cursive;--serif:'Cormorant Garamond',Georgia,serif}
+:root{--fondo:#ebe2cd;--panel:rgba(248,243,232,.86);--panel2:#f8f3e8;--oro:#a47a24;--oro-os:#7d5a14;--oro-cl:#d6c08a;--texto:#4f4129;--script:'Pinyon Script','Snell Roundhand','Brush Script MT',cursive;--serif:'Cormorant Garamond',Georgia,serif}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:#fff;color:var(--texto);font:400 1.25rem/1.65 var(--serif);text-align:center;-webkit-font-smoothing:antialiased}
+body{background:var(--fondo);color:var(--texto);font:400 1.25rem/1.65 var(--serif);text-align:center;-webkit-font-smoothing:antialiased}
 body.bloqueado{overflow:hidden}
-.oro{background:linear-gradient(100deg,#9c7220 10%,#e9cf8b 30%,#b8892d 50%,#f3e3b3 70%,#9c7220 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s linear infinite}
+.oro{background:linear-gradient(100deg,#8a6418 10%,#c9a24a 30%,#a47a24 50%,#d4b25a 70%,#8a6418 90%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brillo 7s linear infinite}
 @keyframes brillo{to{background-position:-200% 0}}
 canvas#polvo{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 main{position:relative;z-index:2}
 section{padding:3.5rem 1.5rem;max-width:760px;margin:1.5rem auto}
-.marco{position:relative;background:rgba(255,255,255,.86);border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px}
+.marco{position:relative;background:var(--panel);border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px}
 section.marco{width:calc(100% - 3rem)}
-.sub{border:1px solid var(--oro-cl);padding:1.4rem 1rem;background:#fff}
+.sub{border:1px solid var(--oro-cl);padding:1.4rem 1rem;background:var(--panel2)}
 h2{font:400 2.6rem/1.2 var(--script);margin-bottom:1.4rem;padding:0 .2em}
 h3{font:600 1.15rem/1.3 var(--serif);color:var(--oro-os);margin-bottom:.5rem;letter-spacing:.04em}
 p+p{margin-top:.4rem}
 .linea{height:1px;width:min(220px,60%);margin:0 auto 2rem;background:linear-gradient(90deg,transparent,var(--oro),transparent)}
 
 /* Portada */
-#portada{position:fixed;inset:0;z-index:50;background:#fff;display:flex;align-items:center;justify-content:center;padding:1rem;transition:opacity 1s ease .5s,transform 1.4s ease}
-.sobre{width:min(92vw,540px);aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:22% 6% 4%;border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px;background:linear-gradient(to bottom right,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) left top/50% 58% no-repeat,linear-gradient(to bottom left,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) right top/50% 58% no-repeat,#fff}
+#portada{position:fixed;inset:0;z-index:50;background:var(--fondo);display:flex;align-items:center;justify-content:center;padding:1rem;transition:opacity 1s ease .5s,transform 1.4s ease}
+.sobre{width:min(92vw,540px);aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;padding:22% 6% 4%;border:1px solid var(--oro);outline:1px solid var(--oro-cl);outline-offset:6px;background:linear-gradient(to bottom right,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) left top/50% 58% no-repeat,linear-gradient(to bottom left,transparent calc(50% - .75px),#d4af37 calc(50% - .75px),#d4af37 calc(50% + .75px),transparent calc(50% + .75px)) right top/50% 58% no-repeat,var(--panel2)}
 .sobre.img{background:url('sobre.png') center/100% 100% no-repeat;border:0;outline:0}
 .sobre .mono{font:400 clamp(3.2rem,15vw,5.2rem)/1 var(--script);padding:0 .2em}
 .sobre p{font-style:italic;font-size:clamp(1rem,3.6vw,1.3rem);line-height:1.3}
@@ -38,9 +39,9 @@ p+p{margin-top:.4rem}
 .destello.ir{animation:onda 1.4s ease-out}
 @keyframes onda{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(160);border-width:.2px}}
 
-.btn{display:inline-block;font:600 1.1rem var(--serif);letter-spacing:.06em;color:#fff;background:linear-gradient(120deg,#9c7220,#d4af37 50%,#9c7220);background-size:200% 100%;border:0;border-radius:40px;padding:.7rem 2rem;cursor:pointer;text-decoration:none;transition:background-position .6s}
+.btn{display:inline-block;font:600 1.1rem var(--serif);letter-spacing:.06em;color:#2a2118;background:linear-gradient(120deg,#b8892d,#e9cf8b 50%,#b8892d);background-size:200% 100%;border:0;border-radius:40px;padding:.7rem 2rem;cursor:pointer;text-decoration:none;transition:background-position .6s}
 .btn:hover{background-position:100% 0}
-.btn.claro{background:#fff;color:var(--oro-os);border:1px solid var(--oro)}
+.btn.claro{background:var(--panel2);color:var(--oro-os);border:1px solid var(--oro)}
 :focus-visible{outline:2px solid var(--oro);outline-offset:3px}
 
 /* Inicio */
@@ -49,7 +50,7 @@ p+p{margin-top:.4rem}
 #inicio .nombre{font:400 clamp(3rem,12vw,6.5rem)/1.15 var(--script);padding:0 .25em}
 #inicio .y{font:400 2.2rem var(--script);color:var(--oro);line-height:1}
 #inicio .fecha{margin-top:1.6rem;font-size:1.5rem;letter-spacing:.08em}
-.cuenta{display:flex;gap:.8rem;justify-content:center;margin-top:2.2rem;border:1px solid var(--oro-cl);padding:1rem 1.2rem;background:#fff}
+.cuenta{display:flex;gap:.8rem;justify-content:center;margin-top:2.2rem;border:1px solid var(--oro-cl);padding:1rem 1.2rem;background:var(--panel2)}
 .cuenta div{min-width:52px}
 .cuenta b{display:block;font:400 2.4rem/1 var(--serif);color:var(--oro-os)}
 .cuenta span{font-size:1rem;font-style:italic}
@@ -62,20 +63,30 @@ p+p{margin-top:.4rem}
 .lugar .btn{margin-top:1rem}
 .hora{font-weight:600;font-size:1.4rem;color:var(--oro-os)}
 
-.fotos{columns:2 180px;column-gap:14px;margin-top:1rem}
-.fotos img{width:100%;display:block;margin:0 0 14px;padding:6px;background:#fff;border:1px solid var(--oro-cl);box-shadow:0 8px 20px rgba(184,137,45,.22);break-inside:avoid;animation:aparece .9s ease both}
-@keyframes aparece{from{opacity:0;transform:scale(.94) rotate(-1.5deg)}}
+/* Fotos en carrusel */
+.carrusel{max-width:560px;margin:0 auto}
+.pista{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:10px 0 18px}
+.pista::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;display:flex;justify-content:center;align-items:center;padding:0 4px}
+.cuadro{width:fit-content;max-width:100%;padding:16px;background:linear-gradient(135deg,#f3e3b3,#b8892d 22%,#6e4f15 48%,#d4af37 74%,#f3e3b3);box-shadow:inset 0 0 0 1px rgba(0,0,0,.45),inset 0 0 0 5px rgba(255,236,176,.55),inset 0 0 0 7px rgba(90,62,12,.6),0 14px 28px rgba(80,55,15,.35)}
+.paspartu{background:#f7f1e3;padding:12px;box-shadow:inset 0 0 10px rgba(0,0,0,.3),0 0 0 1px rgba(90,62,12,.8)}
+.paspartu img{display:block;max-width:100%;width:auto;height:auto;max-height:min(60vh,480px);margin:0 auto;box-shadow:0 0 0 1px #b8892d,0 2px 8px rgba(0,0,0,.35)}
+.mando{display:flex;align-items:center;justify-content:center;gap:1.2rem}
+.nav{width:44px;height:44px;border-radius:50%;border:1px solid var(--oro);background:var(--panel2);color:var(--oro-os);cursor:pointer;display:grid;place-items:center}
+.nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.nav:hover{background:var(--oro);color:#fff}
+#contador{min-width:4.5rem;font-size:1.2rem}
 
 form{display:grid;gap:1rem;text-align:left;max-width:460px;margin:0 auto}
 label{font-size:1.05rem;color:var(--oro-os);font-weight:600}
-input,select,textarea{width:100%;font:inherit;color:var(--texto);background:#fff;border:1px solid var(--oro-cl);border-radius:6px;padding:.6rem .8rem}
+input,select,textarea{width:100%;font:inherit;color:var(--texto);background:var(--panel2);border:1px solid var(--oro-cl);border-radius:6px;padding:.6rem .8rem}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--oro);border-color:var(--oro)}
 form .btn{justify-self:center;margin-top:.5rem}
 #gracias{display:none;font-size:1.5rem;font-style:italic}
 footer{padding:3rem 1.5rem 5rem;position:relative;z-index:2}
 footer .firma{font:400 3rem var(--script);padding:0 .2em}
 
-#mbtn{position:fixed;right:16px;bottom:16px;z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--oro);background:#fff;color:var(--oro-os);cursor:pointer;display:none;place-items:center}
+#mbtn{position:fixed;right:16px;bottom:16px;z-index:40;width:48px;height:48px;border-radius:50%;border:1px solid var(--oro);background:var(--panel2);color:var(--oro-os);cursor:pointer;display:none;place-items:center}
 #mbtn.ver{display:grid}
 #mbtn svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
 #mbtn .tacha{display:none}
@@ -133,8 +144,8 @@ footer .firma{font:400 3rem var(--script);padding:0 .2em}
     </div>
     <div class="padrinos sub">
       <h3>Nuestros padrinos</h3>
-      <p>Bernardo Algo Algo</p>
-      <p>Gilberta Algo Algo</p>
+      <p>Bernardo Mellado Bañuelos</p>
+      <p>Gilberta Nava Cervantes</p>
     </div>
   </section>
 
@@ -160,7 +171,14 @@ footer .firma{font:400 3rem var(--script);padding:0 .2em}
   <section id="seccion-fotos" class="marco" hidden>
     <h2 class="oro">Nuestra historia</h2>
     <div class="linea"></div>
-    <div class="fotos" id="fotos"></div>
+    <div class="carrusel">
+      <div class="pista" id="pista"></div>
+      <div class="mando" id="mando">
+        <button class="nav" id="ant" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span id="contador"></span>
+        <button class="nav" id="sig" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
   </section>
 
   <section class="marco">
@@ -209,7 +227,7 @@ estado();
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const c = $('polvo'), x = c.getContext('2d');
-  const colores = ['#d4af37','#e9cf8b','#f3e3b3','#c9966b','#e8b4a0','#b8892d'];
+  const colores = ['#d4af37','#c9a24a','#b8892d','#c9966b','#e0b84a','#e8b4a0'];
   let w, h, p = [];
   const medir = () => { w = c.width = innerWidth; h = c.height = innerHeight; };
   addEventListener('resize', medir); medir();
@@ -251,14 +269,33 @@ estado();
   paso(); setInterval(paso, 1000);
 })();
 
-/* Fotos: carga fotos/1.jpg, fotos/2.jpg... hasta que no encuentre más */
+/* Fotos en carrusel: carga fotos/1.jpg, fotos/2.jpg... y las pasa solas */
 (function(){
+  const pista = $('pista'), cont = $('contador'), mando = $('mando');
+  const calma = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let n = 0, ultimo = 0;
+  const tocar = () => { ultimo = Date.now(); };
+  const actual = () => Math.round(pista.scrollLeft / pista.clientWidth);
+  function mostrar(){ mando.style.display = n > 1 ? 'flex' : 'none'; cont.textContent = (actual() + 1) + ' / ' + n; }
+  function ir(i){ pista.scrollTo({ left: ((i + n) % n) * pista.clientWidth, behavior: calma ? 'auto' : 'smooth' }); }
   function cargar(i){
     const img = new Image();
     img.alt = 'Foto de Kennia y Marco Antonio ' + i;
-    img.onload = () => { $('fotos').appendChild(img); $('seccion-fotos').hidden = false; cargar(i + 1); };
+    img.onload = () => {
+      const s = document.createElement('div'); s.className = 'slide';
+      s.innerHTML = '<div class="cuadro"><div class="paspartu"></div></div>';
+      s.querySelector('.paspartu').appendChild(img);
+      pista.appendChild(s); n++;
+      $('seccion-fotos').hidden = false; mostrar(); cargar(i + 1);
+    };
     img.src = 'fotos/' + i + '.jpg';
   }
+  $('ant').addEventListener('click', () => { tocar(); ir(actual() - 1); });
+  $('sig').addEventListener('click', () => { tocar(); ir(actual() + 1); });
+  pista.addEventListener('scroll', mostrar, { passive: true });
+  ['pointerdown','touchstart','wheel'].forEach(ev => pista.addEventListener(ev, tocar, { passive: true }));
+  /* Cada 4 segundos pasa a la siguiente; si alguien la mueve, espera 6 segundos antes de seguir */
+  setInterval(() => { if (n > 1 && !document.hidden && Date.now() - ultimo > 6000) ir(actual() + 1); }, 4000);
   cargar(1);
 })();
 
